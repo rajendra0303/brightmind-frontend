@@ -40,9 +40,13 @@
 
 .logo-img {
   height: 40px;
-  width: 50px;
+  width: 40px;
   margin-right: 0.5rem;
   vertical-align: middle;
+  border-radius: 50%;
+  background: transparent;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .nav-toggle {
