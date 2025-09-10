@@ -1,0 +1,176 @@
+<div class="auth-page">
+  <div class="auth-background">
+    <div class="auth-overlay"></div>
+    <div class="auth-pattern"></div>
+    <div class="floating-elements">
+      <div class="floating-element element-1"></div>
+      <div class="floating-element element-2"></div>
+      <div class="floating-element element-3"></div>
+      <div class="floating-element element-4"></div>
+    </div>
+  </div>
+
+  <div class="auth-container">
+    <div class="auth-visual">
+      <div class="visual-content animate-fade-in">
+        <div class="logo-section">
+          <div class="logo-icon">🧠</div>
+          <h2 class="visual-title gradient-text">BrightMind</h2>
+        </div>
+        <p class="visual-subtitle">
+          Empowering innovation through cutting-edge technology solutions
+        </p>
+        <div class="visual-features">
+          <div class="feature-item animate-slide-up" style="animation-delay: 0.1s">
+            <div class="feature-icon-wrapper">
+              <svg class="feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="feature-content">
+              <h4 class="feature-title">Innovation First</h4>
+              <p class="feature-description">Cutting-edge solutions</p>
+            </div>
+          </div>
+          <div class="feature-item animate-slide-up" style="animation-delay: 0.2s">
+            <div class="feature-icon-wrapper">
+              <svg class="feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="feature-content">
+              <h4 class="feature-title">Quality Assured</h4>
+              <p class="feature-description">Premium standards</p>
+            </div>
+          </div>
+          <div class="feature-item animate-slide-up" style="animation-delay: 0.3s">
+            <div class="feature-icon-wrapper">
+              <svg class="feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M22 16.92V19.92C22.0011 20.1985 21.9441 20.4742 21.8325 20.7293C21.7209 20.9845 21.5573 21.2136 21.3521 21.4019C21.1468 21.5901 20.9046 21.7335 20.6407 21.8227C20.3769 21.9119 20.0974 21.9451 19.82 21.92C16.7428 21.5856 13.787 20.5341 11.19 18.85C8.77382 17.3147 6.72533 15.2662 5.18999 12.85C3.49997 10.2412 2.44824 7.271 2.11999 4.18C2.095 3.90347 2.12787 3.62476 2.21649 3.36162C2.30512 3.09849 2.44756 2.85669 2.63476 2.65162C2.82196 2.44655 3.0498 2.28271 3.30379 2.17052C3.55777 2.05833 3.83233 2.00026 4.10999 2H7.10999C7.59531 1.99522 8.06679 2.16708 8.43376 2.48353C8.80073 2.79999 9.04076 3.23945 9.10999 3.72C9.23662 4.68007 9.47144 5.62273 9.80999 6.53C9.94454 6.88792 9.97366 7.27691 9.89391 7.65088C9.81415 8.02485 9.62886 8.36811 9.35999 8.64L8.08999 9.91C9.51355 12.4135 11.5865 14.4864 14.09 15.91L15.36 14.64C15.6319 14.3711 15.9751 14.1858 16.3491 14.1061C16.7231 14.0263 17.1121 14.0555 17.47 14.19C18.3773 14.5286 19.3199 14.7634 20.28 14.89C20.7658 14.9585 21.2094 15.2032 21.5265 15.5775C21.8437 15.9518 22.0122 16.4296 22 16.92Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="feature-content">
+              <h4 class="feature-title">24/7 Support</h4>
+              <p class="feature-description">Always here to help</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="auth-card animate-scale-in">
+      <div class="auth-header">
+        <div class="auth-icon">🔐</div>
+        <h1 class="auth-title">Welcome Back</h1>
+        <p class="auth-subtitle">Sign in to your account to continue your journey</p>
+      </div>
+
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="auth-form">
+        <div class="form-group">
+          <label for="email" class="form-label">
+            <svg class="label-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M3 8L10.89 13.26C11.2187 13.4793 11.6049 13.5963 12 13.5963C12.3951 13.5963 12.7813 13.4793 13.11 13.26L21 8M5 19H19C19.5304 19 20.0391 18.7893 20.4142 18.4142C20.7893 18.0391 21 17.5304 21 17V7C21 6.46957 20.7893 5.96086 20.4142 5.58579C20.0391 5.21071 19.5304 5 19 5H5C4.46957 5 3.96086 5.21071 3.58579 5.58579C3.21071 5.96086 3 6.46957 3 7V17C3 17.5304 3.21071 18.0391 3.58579 18.4142C3.96086 18.7893 4.46957 19 5 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Email Address
+          </label>
+          <input
+            type="email"
+            id="email"
+            formControlName="email"
+            class="form-input"
+            [class.error]="getFieldError('email')"
+            placeholder="Enter your email"
+          />
+          <div class="error-message" *ngIf="getFieldError('email')">
+            {{ getFieldError('email') }}
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="password" class="form-label">
+            <svg class="label-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M12 22C12 22 21 20 21 15V9C21 4 20 3 12 3C4 3 3 4 3 9V15C3 20 4 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8 11V7C8 5.93913 8.42143 4.92172 9.17157 4.17157C9.92172 3.42143 10.9391 3 12 3C13.0609 3 14.0783 3.42143 14.8284 4.17157C15.5786 4.92172 16 5.93913 16 7V11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Password
+          </label>
+          <input
+            type="password"
+            id="password"
+            formControlName="password"
+            class="form-input"
+            [class.error]="getFieldError('password')"
+            placeholder="Enter your password"
+          />
+          <div class="error-message" *ngIf="getFieldError('password')">
+            {{ getFieldError('password') }}
+          </div>
+        </div>
+
+        <div class="form-options">
+          <label class="checkbox-container">
+            <input type="checkbox" />
+            <span class="checkmark"></span>
+            <span class="checkbox-text">Remember me</span>
+          </label>
+          <a href="#" class="forgot-password">
+            <svg class="forgot-icon" width="14" height="14" viewBox="0 0 24 24" fill="none">
+              <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Forgot Password?
+          </a>
+        </div>
+
+        <div class="error-message general-error" *ngIf="errorMessage">
+          <svg class="error-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M12 9V13M12 17H12.01M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          {{ errorMessage }}
+        </div>
+
+        <button
+          type="submit"
+          class="auth-button"
+          [disabled]="isLoading"
+        >
+          <span *ngIf="!isLoading">
+            <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M11 16L15 12L11 8M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Sign In
+          </span>
+          <span *ngIf="isLoading" class="loading-spinner"></span>
+        </button>
+      </form>
+
+      <div class="auth-divider">
+        <span class="divider-text">or</span>
+      </div>
+
+      <div class="social-login">
+        <button class="social-button google">
+          <svg class="social-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="M22.56 12.25C22.56 11.47 22.49 10.72 22.36 10H12V14.255H17.92C17.665 15.63 16.89 16.795 15.725 17.575V20.335H19.28C21.36 18.42 22.56 15.6 22.56 12.25Z" fill="#4285F4"/>
+            <path d="M12 23C15.24 23 17.955 21.935 19.28 20.335L15.725 17.575C14.735 18.235 13.48 18.625 12 18.625C8.875 18.625 6.229 16.575 5.405 13.78H1.765V16.54C3.08 19.135 7.31 23 12 23Z" fill="#34A853"/>
+            <path d="M5.405 13.78C5.205 13.13 5.1 12.43 5.1 11.7C5.1 10.97 5.205 10.27 5.405 9.62V6.86H1.765C1.035 8.35 0.5 10.04 0.5 11.7C0.5 13.36 1.035 15.05 1.765 16.54L5.405 13.78Z" fill="#FBBC05"/>
+            <path d="M12 5.375C13.615 5.375 15.065 5.93 16.205 7.02L19.36 3.865C17.955 2.54 15.24 1.5 12 1.5C7.31 1.5 3.08 5.365 1.765 7.96L5.405 10.72C6.229 7.925 8.875 5.875 12 5.375Z" fill="#EA4335"/>
+          </svg>
+          Continue with Google
+        </button>
+        <button class="social-button github">
+          <svg class="social-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.374 0 0 5.373 0 12 0 17.302 3.438 21.8 8.207 23.387c.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+          </svg>
+          Continue with GitHub
+        </button>
+      </div>
+
+      <div class="auth-footer">
+        <p class="auth-footer-text">
+          Don't have an account?
+          <a routerLink="/auth/register" class="auth-link">Sign up here</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

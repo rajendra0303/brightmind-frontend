@@ -1,0 +1,254 @@
+<div class="services-page">
+  <!-- Hero Section with Background -->
+  <section class="hero-section">
+    <div class="hero-background">
+      <div class="hero-overlay"></div>
+      <div class="hero-pattern"></div>
+    </div>
+    <div class="container">
+      <div class="hero-content animate-fade-in">
+        <div class="hero-badge">
+          <span class="badge-icon">🚀</span>
+          <span class="badge-text">Premium Services</span>
+        </div>
+        <h1 class="hero-title gradient-text">Our Services</h1>
+        <p class="hero-subtitle">
+          Comprehensive technology solutions designed to accelerate your business growth and drive innovation
+        </p>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-number">500+</div>
+            <div class="stat-label">Projects Completed</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">98%</div>
+            <div class="stat-label">Client Satisfaction</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Support Available</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section class="services-section">
+    <div class="container">
+      <div class="section-header animate-slide-up">
+        <h2 class="section-title">What We Offer</h2>
+        <p class="section-subtitle">
+          Cutting-edge solutions tailored to your business needs
+        </p>
+      </div>
+      
+      <div class="services-grid">
+        <div class="service-card animate-scale-in" 
+             *ngFor="let service of services; let i = index" 
+             (click)="selectService(service)"
+             [style.animation-delay]="(i * 0.1) + 's'">
+          <div class="service-card-inner">
+            <div class="service-icon-wrapper">
+              <div class="service-icon">{{ service.icon }}</div>
+              <div class="service-icon-bg"></div>
+            </div>
+            <div class="service-content">
+              <h3 class="service-title">{{ service.title }}</h3>
+              <p class="service-description">{{ service.description }}</p>
+              <div class="service-features">
+                <span class="feature-tag" *ngFor="let feature of service.features.slice(0, 3)">
+                  {{ feature }}
+                </span>
+              </div>
+              <div class="service-pricing">
+                <span class="price-label">Starting from</span>
+                <span class="price-amount" *ngIf="service.pricing.basic !== 0">${{ service.pricing.basic }}</span>
+                <span class="price-amount" *ngIf="service.pricing.basic === 0">{{ service.pricing.enterprise }}</span>
+              </div>
+            </div>
+            <button class="service-btn">
+              <span>Learn More</span>
+              <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="process-section">
+    <div class="container">
+      <div class="section-header animate-slide-up">
+        <h2 class="section-title">Our Process</h2>
+        <p class="section-subtitle">
+          A proven methodology that ensures successful project delivery
+        </p>
+      </div>
+      
+      <div class="process-timeline">
+        <div class="process-step animate-fade-in" 
+             *ngFor="let step of ['Discovery', 'Design', 'Development', 'Testing', 'Launch']; let i = index"
+             [style.animation-delay]="(i * 0.2) + 's'">
+          <div class="step-connector" *ngIf="i < 4"></div>
+          <div class="step-content">
+            <div class="step-number">{{ i + 1 }}</div>
+            <div class="step-info">
+              <h3 class="step-title">{{ step }}</h3>
+              <p class="step-description">
+                {{ getStepDescription(step) }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-background">
+      <div class="cta-overlay"></div>
+    </div>
+    <div class="container">
+      <div class="cta-content animate-scale-in">
+        <div class="cta-icon">💡</div>
+        <h2 class="cta-title">Ready to Get Started?</h2>
+        <p class="cta-subtitle">
+          Let's discuss your project requirements and create something amazing together
+        </p>
+        <div class="cta-buttons">
+          <a routerLink="/contact" class="btn btn-primary">
+            <span>Start Your Project</span>
+            <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <button class="btn btn-secondary" (click)="scrollToContact()">
+            <span>Get a Quote</span>
+            <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Modal -->
+  <div class="modal-overlay" *ngIf="selectedService" (click)="closeModal()">
+    <div class="modal-content animate-scale-in" (click)="$event.stopPropagation()">
+      <button class="modal-close" (click)="closeModal()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      
+      <div class="modal-header">
+        <div class="modal-icon-wrapper">
+          <div class="modal-icon">{{ selectedService.icon }}</div>
+        </div>
+        <h2 class="modal-title">{{ selectedService.title }}</h2>
+        <p class="modal-description">{{ selectedService.description }}</p>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-section">
+          <h3 class="modal-section-title">
+            <svg class="section-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            What's Included
+          </h3>
+          <ul class="modal-features">
+            <li *ngFor="let feature of selectedService.features">
+              <svg class="feature-check" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              {{ feature }}
+            </li>
+          </ul>
+        </div>
+
+        <div class="modal-section">
+          <h3 class="modal-section-title">
+            <svg class="section-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Our Process
+          </h3>
+          <div class="process-timeline">
+            <div class="timeline-item" *ngFor="let step of selectedService.process; let i = index">
+              <div class="timeline-number">{{ i + 1 }}</div>
+              <div class="timeline-content">{{ step }}</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-section">
+          <h3 class="modal-section-title">
+            <svg class="section-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2V22M17 5H9.5C8.11929 5 7 6.11929 7 7.5S8.11929 10 9.5 10H14.5C15.8807 10 17 11.1193 17 12.5S15.8807 15 14.5 15H7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Pricing
+          </h3>
+          <div class="pricing-cards">
+            <div class="pricing-card">
+              <div class="pricing-header">
+                <h4 class="pricing-title">Basic</h4>
+                <div class="pricing-price">${{ selectedService.pricing.basic }}</div>
+              </div>
+              <p class="pricing-description">Perfect for small projects</p>
+              <ul class="pricing-features">
+                <li>Basic features</li>
+                <li>Email support</li>
+                <li>Standard delivery</li>
+              </ul>
+            </div>
+            <div class="pricing-card featured">
+              <div class="pricing-badge">Most Popular</div>
+              <div class="pricing-header">
+                <h4 class="pricing-title">Premium</h4>
+                <div class="pricing-price">${{ selectedService.pricing.premium }}</div>
+              </div>
+              <p class="pricing-description">Most popular choice</p>
+              <ul class="pricing-features">
+                <li>All basic features</li>
+                <li>Priority support</li>
+                <li>Fast delivery</li>
+                <li>Advanced features</li>
+              </ul>
+            </div>
+            <div class="pricing-card">
+              <div class="pricing-header">
+                <h4 class="pricing-title">Enterprise</h4>
+                <div class="pricing-price">{{ selectedService.pricing.enterprise }}</div>
+              </div>
+              <p class="pricing-description">Custom solutions</p>
+              <ul class="pricing-features">
+                <li>All premium features</li>
+                <li>24/7 support</li>
+                <li>Custom development</li>
+                <li>Dedicated team</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <a routerLink="/contact" class="btn btn-primary" (click)="closeModal()">
+          <span>Get Started</span>
+          <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

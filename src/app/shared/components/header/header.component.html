@@ -1,0 +1,49 @@
+<header class="header">
+  <nav class="navbar">
+    <div class="nav-container">
+      <!-- Logo -->
+      <div class="nav-logo">
+        <a routerLink="/" class="nav-logo-link">
+          <img src="assets/logo.png" alt="Logo" class="logo-img" />
+          <span class="logo-text">BrightMind</span>
+        </a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="nav-toggle" (click)="toggleMenu()">
+        <span class="bar" [class.active]="isMenuOpen"></span>
+        <span class="bar" [class.active]="isMenuOpen"></span>
+        <span class="bar" [class.active]="isMenuOpen"></span>
+      </div>
+
+      <!-- Navigation menu -->
+      <div class="nav-menu" [class.active]="isMenuOpen">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a routerLink="/" routerLinkActive="active" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/services" routerLinkActive="active" class="nav-link">Services</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/contact" routerLinkActive="active" class="nav-link">Contact</a>
+          </li>
+          
+          <!-- Auth buttons -->
+          <li class="nav-item auth-buttons" *ngIf="!currentUser">
+            <a routerLink="/auth/login" class="nav-link btn-login">Login</a>
+            <a routerLink="/auth/register" class="nav-link btn-register">Sign Up</a>
+          </li>
+          
+          <!-- User menu -->
+          <li class="nav-item user-menu" *ngIf="currentUser">
+            <div class="user-dropdown">
+              <span class="user-name">{{ currentUser.firstName }} {{ currentUser.lastName }}</span>
+              <button class="logout-btn" (click)="logout()">Logout</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

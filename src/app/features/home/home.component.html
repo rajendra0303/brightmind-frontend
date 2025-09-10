@@ -1,0 +1,76 @@
+<div class="home-page">
+  <!-- Hero Section -->
+  <app-hero></app-hero>
+
+  <!-- Services Section -->
+  <section id="services" class="services-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">
+          Comprehensive solutions tailored to meet your business needs
+        </p>
+      </div>
+      
+      <div class="services-grid">
+        <div class="service-card" *ngFor="let service of services">
+          <div class="service-icon">{{ service.icon }}</div>
+          <h3 class="service-title">{{ service.title }}</h3>
+          <p class="service-description">{{ service.description }}</p>
+          <ul class="service-features">
+            <li *ngFor="let feature of service.features">{{ feature }}</li>
+          </ul>
+          <a routerLink="/services" class="service-link">Learn More →</a>
+        </div>
+      </div>
+    </div>
+  </section>  
+
+  <!-- Features Section -->
+  <section class="features-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Why Choose Us</h2>
+        <p class="section-subtitle">
+          We deliver excellence through innovation, quality, and dedication
+        </p>
+      </div>
+      
+      <div class="features-grid">
+        <div class="feature-card" *ngFor="let feature of features">
+          <div class="feature-icon">{{ feature.icon }}</div>
+          <h3 class="feature-title">{{ feature.title }}</h3>
+          <p class="feature-description">{{ feature.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item" *ngFor="let stat of stats">
+          <div class="stat-number">{{ stat.number }}</div>
+          <div class="stat-label">{{ stat.label }}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="cta-title">Ready to Start Your Project?</h2>
+        <p class="cta-subtitle">
+          Let's discuss how we can help bring your vision to life
+        </p>
+        <div class="cta-buttons">
+          <a routerLink="/contact" class="btn btn-primary">Get Started</a>
+          <a routerLink="/services" class="btn btn-secondary">View Services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

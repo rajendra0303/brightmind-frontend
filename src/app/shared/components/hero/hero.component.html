@@ -1,0 +1,81 @@
+<section class="hero">
+  <div class="hero-background">
+    <div class="hero-overlay"></div>
+  </div>
+  
+  <div class="hero-container">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title">
+          Welcome to 
+          <span class="hero-title-highlight">BrightMind</span>
+        </h1>
+        <p class="hero-subtitle">
+          Empowering innovation through cutting-edge technology solutions. 
+          We transform ideas into reality with expertise, creativity, and dedication.
+        </p>
+        <div class="hero-buttons">
+          <a routerLink="/services" class="btn btn-primary">
+            Explore Services
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+            </svg>
+          </a>
+          <button class="btn btn-secondary" (click)="scrollToServices()">
+            Learn More
+          </button>
+        </div>
+      </div>
+      
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="card-header">
+            <div class="card-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="code-line">
+              <span class="code-keyword">const</span>
+              <span class="code-variable">brightMind</span>
+              <span class="code-operator">=</span>
+              <span class="code-string">"Innovation"</span>
+            </div>
+            <div class="code-line">
+              <span class="code-keyword">function</span>
+              <span class="code-function">createSolution</span>
+              <span class="code-bracket">{{ '{' }}</span>
+            </div>
+            <div class="code-line indent">
+              <span class="code-keyword">return</span>
+              <span class="code-string">"Excellence"</span>
+            </div>
+            <div class="code-line">
+              <span class="code-bracket">{{ '}' }}</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="floating-elements">
+          <div class="floating-element element-1">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </div>
+          <div class="floating-element element-2">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+          </div>
+          <div class="floating-element element-3">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M9 11H7v6h2v-6zm4 0h-2v6h2v-6zm4 0h-2v6h2v-6zm2.5-9H19V1h-2v1H7V1H5v1H4.5C3.67 2 3 2.67 3 3.5v15C3 19.33 3.67 20 4.5 20h15c.83 0 1.5-.67 1.5-1.5v-15C21 2.67 20.33 2 19.5 2z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
