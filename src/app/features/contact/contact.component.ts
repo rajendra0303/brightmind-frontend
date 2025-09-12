@@ -22,9 +22,9 @@ export class ContactComponent implements OnInit {
   submitMessage = '';
 
   contactInfo: ContactInfoItem[] = [
-    { icon: '📍', title: 'Our Office', description: 'Visit our headquarters', value: '123 Innovation Ave, Tech City' },
-    { icon: '📞', title: 'Phone', description: 'Call us anytime', value: '+1 (555) 012-3456' },
-    { icon: '✉️', title: 'Email', description: 'Send us an email', value: 'hello@brightmind.dev' },
+    { icon: '📍', title: 'Our Office', description: 'Visit our headquarters', value: 'Wakad Pune' },
+    { icon: '📞', title: 'Phone', description: 'Call us anytime', value: '+91 7058346967' },
+    { icon: '✉️', title: 'Email', description: 'Send us an email', value: 'hr@brightmind.dev' },
     { icon: '⏰', title: 'Hours', description: 'We are available', value: 'Mon - Fri, 9:00 - 18:00' }
   ];
 
