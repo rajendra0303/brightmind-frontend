@@ -268,36 +268,45 @@
   }
 }
 
-@media (max-width: 768px) {
-  .hero-content {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    text-align: center;
+.floating-element {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+/* Default (PC / Large screens) */
+.circle-logo {
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.circle-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .circle-logo {
+    width: 43px;
+    height: 43px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .circle-logo {
+    width: 43px;
+    height: 43px;
   }
 
-  .hero-title {
-    font-size: 2.5rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1.125rem;
-  }
-
-  .hero-buttons {
-    justify-content: center;
-  }
-
-  .hero-card {
-    max-width: 100%;
-  }
-
-  .floating-element {
-    width: 40px;
-    height: 40px;
-  }
-
-  .floating-element svg {
-    width: 20px;
-    height: 20px;
-  }
 }
