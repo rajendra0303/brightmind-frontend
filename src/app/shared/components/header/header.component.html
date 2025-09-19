@@ -4,7 +4,8 @@
       <!-- Logo -->
       <div class="nav-logo">
         <a routerLink="/" class="nav-logo-link">
-          <img src="https://cdn.jsdelivr.net/gh/rajendra0303/brightmind-frontend/src/assets/logo.png" alt="BrightMind Logo" class="logo-img" />
+          <img src="https://cdn.jsdelivr.net/gh/rajendra0303/brightmind-frontend/src/assets/logo.png"
+               alt="BrightMind Logo" class="logo-img" />
           <span class="logo-text">BrightMind</span>
         </a>
       </div>
@@ -17,24 +18,51 @@
       </div>
 
       <!-- Navigation menu -->
-      <div class="nav-menu" [class.active]="isMenuOpen">
-        <ul class="nav-list">
-          <li class="nav-item">
-            <a routerLink="/Home" routerLinkActive="active" class="nav-link">Home</a>
-          </li>
-          <li class="nav-item">
-            <a routerLink="/services" routerLinkActive="active" class="nav-link">Services</a>
-          </li>
-          <li class="nav-item">
-            <a routerLink="/contact" routerLinkActive="active" class="nav-link">Contact</a>
-          </li>
-          
-          <!-- Auth buttons -->
+      <div class="nav-menu"  [class.active]="isMenuOpen">
+        <ul class="nav-list" style="width: 100%; height: 100%; background-color: #fff;">
+          <li class="nav-item"><a routerLink="/Home" routerLinkActive="active" class="nav-link">Home</a></li>
+          <li class="nav-item"><a routerLink="/services" routerLinkActive="active" class="nav-link">Services</a></li>
+          <li class="nav-item"><a routerLink="/contact" routerLinkActive="active" class="nav-link">Contact</a></li>
+
+          <!-- Auth buttons (desktop) -->
           <li class="nav-item auth-buttons" *ngIf="!currentUser">
             <a routerLink="/auth/login" class="nav-link btn-login">Login</a>
+
+            <!-- Desktop: search icon between login and signup -->
+            <span class="search-icon desktop-only" (click)="openSearchPopup()">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
+                   xmlns="http://www.w3.org/2000/svg">
+                <circle cx="10" cy="10" r="7.5" stroke="#333" stroke-width="2" />
+                <line x1="16" y1="16" x2="21" y2="21" stroke="#333" stroke-width="2" />
+              </svg>
+            </span>
+
             <a routerLink="/auth/register" class="nav-link btn-register">Sign Up</a>
           </li>
-          
+
+          <!-- Mobile drawer: search icon as first item -->
+          <li class="nav-item mobile-only" *ngIf="isMenuOpen">
+            <span class="search-icon" (click)="openSearchPopup()">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
+                   xmlns="http://www.w3.org/2000/svg">
+                <circle cx="10" cy="10" r="7.5" stroke="#333" stroke-width="2" />
+                <line x1="16" y1="16" x2="21" y2="21" stroke="#333" stroke-width="2" />
+              </svg>
+            </span>
+          </li>
+
+          <!-- Search Popup -->
+         <div class="search-popup" *ngIf="isSearchPopupOpen">
+  <div class="search-popup-content">
+    <h2 class="search-title">Search the site</h2>
+    <input type="text"
+           class="header-search"
+           placeholder="Search..."
+           (keydown.enter)="searchWebsite(searchInput.value)"
+           #searchInput />
+    <button class="close-btn" (click)="closeSearchPopup()">&times;</button>
+  </div>
+</div>
           <!-- User menu -->
           <li class="nav-item user-menu" *ngIf="currentUser">
             <div class="user-dropdown">

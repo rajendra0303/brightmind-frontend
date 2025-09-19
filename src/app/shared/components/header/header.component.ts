@@ -14,6 +14,7 @@ import { User } from '../../../core/models/user.model';
 export class HeaderComponent implements OnInit {
   currentUser: User | null = null;
   isMenuOpen = false;
+  isSearchPopupOpen = false;
 
   constructor(private authService: AuthService) {}
 
@@ -30,5 +31,19 @@ export class HeaderComponent implements OnInit {
   logout(): void {
     this.authService.logout();
     this.isMenuOpen = false;
+  }
+
+  openSearchPopup(): void {
+    this.isSearchPopupOpen = true;
+  }
+
+  closeSearchPopup(): void {
+    this.isSearchPopupOpen = false;
+  }
+
+  searchWebsite(query: string): void {
+    // TODO: Implement search logic or navigation
+    console.log('Searching for:', query);
+    this.closeSearchPopup();
   }
 }
