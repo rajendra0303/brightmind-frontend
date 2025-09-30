@@ -32,6 +32,10 @@
           <!-- Auth buttons -->
           <li class="nav-item auth-buttons" *ngIf="!currentUser">
             <a routerLink="/auth/login" class="nav-link btn-login">Login</a>
+            <div class="search-bar-container">
+              <input type="text" class="search-input" placeholder="Search...">
+              <button class="search-btn"></button>
+            </div>
             <a routerLink="/auth/register" class="nav-link btn-register">Sign Up</a>
           </li>
           
