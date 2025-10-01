@@ -9,5 +9,59 @@
   min-height: calc(100vh - 80px); // Account for header height
 }
 
+.message-icon {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+  z-index: 1000;
+  font-size: 28px;
+  transition: background 0.2s;
+}
+
+.message-icon:hover {
+  background: #1565c0;
+}
+
+.message-icon-unique {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 64px;
+  height: 64px;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4f8cff 0%, #1976d2 100%);
+  box-shadow: 0 4px 16px rgba(25, 118, 210, 0.25), 0 1.5px 6px rgba(0,0,0,0.10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.message-icon-unique:hover {
+  transform: scale(1.08);
+  background: linear-gradient(135deg, #1976d2 0%, #4f8cff 100%);
+  box-shadow: 0 8px 24px rgba(25, 118, 210, 0.35), 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.message-icon-unique svg {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
 
 
