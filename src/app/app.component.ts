@@ -13,4 +13,9 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 })
 export class AppComponent {
   title = 'BrightMind';
+  isPopupOpen = false;
+
+  togglePopup() {
+    this.isPopupOpen = !this.isPopupOpen;
+  }
 }

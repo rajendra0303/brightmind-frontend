@@ -4,9 +4,35 @@
     <router-outlet></router-outlet>
   </main>
   <app-footer></app-footer>
-  <button class="message-icon-unique" aria-label="Open messages">
+  <button class="message-icon-unique" aria-label="Open messages" (click)="togglePopup()">
     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
     </svg>
   </button>
+
+  <div class="chat-popup" *ngIf="isPopupOpen">
+    <div class="chat-header">
+      <img src="assets/logo.png" alt="Logo" class="chat-logo" />
+      <span>How can we help?</span>
+      <button class="chat-close" (click)="togglePopup()" aria-label="Close chat">&times;</button>
+    </div>
+    <div class="chat-body">
+      <div class="chat-message bot">Do you have any questions? I'm happy to help.</div>
+      <div class="chat-message bot">What would you like to know?</div>
+      <div class="chat-options">
+        <button>What we do</button>
+        <button>Solutions</button>
+        <button>Services</button>
+        <button>Industries</button>
+        <button>Request a call</button>
+        <button>Others</button>
+      </div>
+      <div class="chat-input-row">
+        <input type="text" placeholder="Choose an option" disabled />
+        <button class="chat-send" disabled>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1976d2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
